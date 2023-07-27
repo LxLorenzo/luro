@@ -10,9 +10,9 @@ const Header = () => {
 
   return (
     <nav className="container mx-auto flex justify-between items-center w-full py-8 px-4 sm:px-8 md:px-16 lg:px-20 xl:px-36">
-      <h1 className="text-2xl xl:text-4xl">
-        <Link href="#">Luro</Link>
-      </h1>
+      <Link href="#" className="text-2xl xl:text-4xl">
+        Luro
+      </Link>
       <div className="lg:flex hidden justify-between items-center gap-5">
         <Link href="#about" className="hover:text-zinc-400 transition-all">
           About

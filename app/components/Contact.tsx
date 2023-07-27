@@ -1,6 +1,8 @@
 import React from 'react'
 import Button from './Button'
 
+import 'material-symbols'
+
 const Contact = () => {
   return (
     <section
@@ -14,7 +16,12 @@ const Contact = () => {
       </p>
       <div className="flex gap-5 mt-5">
         <Button>FAQ</Button>
-        <Button variant="black">NOSSA COMUNIDADE</Button>
+        <Button variant="black" className="flex items-center gap-2">
+          NOSSA COMUNIDADE
+          <span className="material-symbols-outlined text-white text-xs">
+            arrow_outward
+          </span>
+        </Button>
       </div>
     </section>
   )
