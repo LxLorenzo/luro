@@ -10,7 +10,7 @@ module.exports = {
       keyframes: {
         bounce: {
           '0%, 100%': {
-            transform: 'translateY(-5%)',
+            transform: 'translateY(-75%)',
             animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)',
           },
           '50%': {
@@ -18,10 +18,6 @@ module.exports = {
             animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
           },
         },
-      },
-      gradient: {
-        'black-to-white':
-          'bg-gradient-to-t from-gray-700 via-gray-900 to-black',
       },
     },
   },

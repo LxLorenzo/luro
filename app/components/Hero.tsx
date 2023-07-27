@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { RiArrowDownDoubleFill } from 'react-icons/ri'
 import { BsArrowUpShort } from 'react-icons/bs'
+import Link from 'next/link'
 
 const Hero = () => {
   const [toggleScroll, setToggleScroll] = useState(false)
@@ -46,16 +47,21 @@ const Hero = () => {
 
   return (
     <section className="container mx-auto px-4 h-screen flex flex-col relative sm:px-8 md:px-16 lg:px-20 xl:px-36">
-      <h1 className="text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl font-light uppercase tracking-wider leading-[48px] pt-36">
+      <h1 className="text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl font-light uppercase tracking-wider leading-[48px] pt-36 ">
         Design that <br />
         elevate your
         <br /> digital <span className="machineTyping"></span>
       </h1>
       <div className="absolute z-[1] rounded-full w-[30%] h-[30%] top-0 white__gradient" />
-      <RiArrowDownDoubleFill
-        className="text-zinc-400 self-center flex-1 animate-bounce"
-        fontSize={24}
-      />
+      <Link
+        href="#about"
+        className="text-zinc-400 absolute bottom-[20%] left-1/2 animate-bounce"
+      >
+        <RiArrowDownDoubleFill
+          fontSize={24}
+          onClick={() => window.scrollTo({ top: 1000, behavior: 'smooth' })}
+        />
+      </Link>
       {toggleScroll && (
         <div className="fixed p-2 rounded bg-zinc-900 bottom-16 right-16 cursor-pointer z-10 transition-all">
           <BsArrowUpShort
