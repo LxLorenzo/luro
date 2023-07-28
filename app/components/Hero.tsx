@@ -64,12 +64,9 @@ const Hero = () => {
       </RevealWrapper>
       <Link
         href="#about"
-        className="text-zinc-400 absolute bottom-[20%] left-1/2 animate-bounce"
+        className="text-zinc-400 absolute bottom-[15%] left-1/2 animate-bounce p-5"
       >
-        <RiArrowDownDoubleFill
-          fontSize={24}
-          onClick={() => window.scrollTo({ top: 1000, behavior: 'smooth' })}
-        />
+        <RiArrowDownDoubleFill fontSize={24} />
       </Link>
       {toggleScroll && (
         <div className="fixed p-2 rounded bg-white bottom-8 right-8 lg:bottom-16 lg:right-16 cursor-pointer z-10 hover:bg-zinc-300">
