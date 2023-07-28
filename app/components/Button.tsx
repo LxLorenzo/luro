@@ -1,5 +1,9 @@
+'use client'
+
 import React, { ComponentPropsWithoutRef } from 'react'
 import { twMerge } from 'tailwind-merge'
+
+import { RevealWrapper } from 'next-reveal'
 
 interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   variant?: 'default' | 'black'
@@ -19,9 +23,11 @@ const Button = ({ className, variant = 'default', ...props }: ButtonProps) => {
   )
 
   return (
-    <button className={_className} {...props}>
-      {props.children}
-    </button>
+    <RevealWrapper delay={190} origin="bottom" duration={1000} distance="80px">
+      <button className={_className} {...props}>
+        {props.children}
+      </button>
+    </RevealWrapper>
   )
 }
 

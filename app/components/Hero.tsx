@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { RiArrowDownDoubleFill } from 'react-icons/ri'
 import { BsArrowUpShort } from 'react-icons/bs'
 import Link from 'next/link'
+import { RevealWrapper } from 'next-reveal'
 
 const Hero = () => {
   const [toggleScroll, setToggleScroll] = useState(false)
@@ -14,9 +15,11 @@ const Hero = () => {
     let i = 0
     function machineTypingEffect() {
       if (i < machineTypingText.length) {
-        machineTypingElement!.innerHTML += machineTypingText
-          .charAt(i)
-          .toUpperCase()
+        if (machineTypingElement) {
+          machineTypingElement.innerHTML += machineTypingText
+            .charAt(i)
+            .toUpperCase()
+        }
         i++
 
         setTimeout(machineTypingEffect, 150)
@@ -46,13 +49,19 @@ const Hero = () => {
   }
 
   return (
-    <section className="container mx-auto px-4 h-screen flex flex-col relative sm:px-8 md:px-16 lg:px-20 xl:px-36">
-      <h1 className="text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl font-light uppercase tracking-wider leading-[48px] pt-36 ">
-        Design that <br />
-        elevate your
-        <br /> digital <span className="machineTyping"></span>
-      </h1>
-      <div className="absolute z-[1] rounded-full w-[30%] h-[30%] top-0 white__gradient" />
+    <section className="container mx-auto px-4 h-screen flex flex-col relative sm:px-8 md:px-16 lg:px-20 xl:px-36 transition-all">
+      <RevealWrapper
+        delay={190}
+        origin="bottom"
+        duration={1000}
+        distance="100px"
+      >
+        <h1 className="title text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl font-light uppercase tracking-wider leading-[48px] pt-72 ">
+          Design that <br />
+          elevate your
+          <br /> digital <span className="machineTyping"></span>
+        </h1>
+      </RevealWrapper>
       <Link
         href="#about"
         className="text-zinc-400 absolute bottom-[20%] left-1/2 animate-bounce"
@@ -63,9 +72,9 @@ const Hero = () => {
         />
       </Link>
       {toggleScroll && (
-        <div className="fixed p-2 rounded bg-zinc-900 bottom-16 right-16 cursor-pointer z-10 transition-all">
+        <div className="fixed p-2 rounded bg-white bottom-8 right-8 lg:bottom-16 lg:right-16 cursor-pointer z-10 hover:bg-zinc-300">
           <BsArrowUpShort
-            className="text-white"
+            className="text-zinc-900"
             fontSize={24}
             onClick={handleScrollToTop}
           />

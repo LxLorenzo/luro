@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 body {
-  @apply bg-zinc-950 text-white antialiased;
+  @apply bg-black text-white antialiased;
+  background: linear-gradient(-90deg, rgba(0,0,0,1) 0%, rgba(15,15,15,1) 27%, rgba(0,0,0,1) 100%);
 }
 
 html {
@@ -13,4 +14,12 @@ html {
 .white__gradient {
 	background: rgba(255, 255, 255, 0.6);
 	filter: blur(450px);
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.menu {
+  background: linear-gradient(-90deg, rgba(0,0,0,1) 0%, rgba(15,15,15,1) 27%, rgba(0,0,0,1) 100%);
 }
